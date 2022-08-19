@@ -1,0 +1,466 @@
+{% load static %}
+<html lang="en">
+	<!-- Basic -->
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- Site Metas -->
+    <title>Akad</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href=" {% static 'images/favicon.ico' %} " type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'online/css/bootstrap.min.css' %}"> 
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'online/css/style.css' %}">
+	
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href= "{% static 'online/css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href=" {% static 'online/css/custom.css' %}"> 
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="{% static 'images/akad.png' %}" alt=""  style="width:350px; height:100px;"/>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Accueil</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Apropos</a></li>
+						
+						{% if user.is_authenticated %}
+						<li class="nav-item"><a class="nav-link" href="{% url 'reservation' %}">Commande</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'profil' %}">Profil</a></li>
+						{% else %}
+						<li class="nav-item"><a class="nav-link" href="{% url 'signin' %}">connexion</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+
+	<!-- Start slides -->
+	<div id="slides" class="cover-slides">
+		<ul class="slides-container">
+			<li class="text-center">
+				<img src="{% static 'images/1Fichier .png' %}" alt="" >
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Bienvenue chez <br> Akad online shop</strong></h1>
+							<p class="m-b-40">le style et la mode c’est chez nous, ainsi que le respect du temps et la livraison à domicile.<br>
+								Nous donnons nos produits avec un prix abordable, Nos services sont disponibles à Goma et à Kinshasa.</p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Commander</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-center">
+				<img src="{% static 'images/14Fichier .png' %}" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Bienvenue chez <br> Akad online shop</strong></h1>
+							<p class="m-b-40">le style et la mode c’est chez nous, ainsi que le respect du temps et la livraison à domicile.<br>
+								Nous donnons nos produits avec un prix abordable, Nos services sont disponibles à Goma et à Kinshasa.</p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Commander</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="text-center">
+				<img src="{% static 'images/20Fichier .png' %}" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Bienvenue chez <br> Akad online shop</strong></h1>
+							<p class="m-b-40">Les styles et la mode se chez nous,Les respects du temps et la livraison a domicile<br>
+							 nous donnons nos produits avec un prix abordable.Nos services sont disponible a Goma et Kinshasa</p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Commander</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="slides-navigation">
+			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+		</div>
+	</div>
+	<!-- End slides -->
+
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<img src="{% static 'online/images/amissa.jpeg' %}" alt="" class="img-fluid" style="height:400px">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
+					<div class="inner-column">
+						<h1> Bienevenue chez <span> Akad Online Shop</span></h1>
+						<h4>Little Story</h4>
+						<p>En effet, étant passionné par la mode, nous avons constatés, que plusieurs personnes préfèrent passer des commandes en ligne afin de trouver exactement ce qu’ils désirent. Cependant nous avons trouvés préférable de crée Akad online shop, qui est une entreprise de vente des produits en ligne notamment : des vêtements, chaussures, et accessoires; afin de satisfaire les besoins de nos clients, car ils verront plusieurs articles tendances que nous proposons.
+
+						</p>
+						<a class="btn btn-lg btn-circle btn-outline-new-white" href="https://www.instagram.com/Akadonlineshop/">Ma Bio</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End About -->
+
+	<!-- Start QT -->
+	 <div class="qt-box qt-background">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 ml-auto mr-auto text-left">
+					<p class="lead "style='color:rgba(192,64,0);'>
+						" Venez chez nous, nous vous promettons que vous ne serez pas decu. "
+					</p>
+					<span class="lead" style='color:rgba(192,64,0);'>Amissa Dorcas A</span>
+				</div>
+			</div>
+		</div>
+	</div> 
+	<!-- End QT -->
+
+	<!-- Start Menu -->
+
+	<div class="menu-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>La mode de notre Boutique</h2>
+						<p>Faites vos commande nous vous satisfairons avec des bonnes choses</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-24">
+					<div class="special-menu text-center">
+						<div class="button-group filter-button-group">
+							<button class="active" data-filter="*">Tous</button>
+							<button data-filter=".drinks">Chemises femmes</button>
+							<button data-filter=".drinks">Robe femmes</button>
+							<button data-filter=".drinks">Jupes femmes</button>
+							<button data-filter=".drinks">Pantalon femmes</button>
+							<button data-filter=".drinks">chaussures femmes</button>
+							<button data-filter=".lunch">Enfants</button>
+							<button data-filter=".dinner">Hommes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		<div class="row special-list">
+			
+			{% for Femmes in femmes %}
+				<div class="col-lg-4 col-md-6 special-grid drinks">
+					
+					<div class="gallery-single fix">
+						<img src="{{ Femmes.image_femme.url }}" class="img-fluid" alt="Image">
+					<div class="why-text">
+							<h4>{{ Femmes.name_femme }}</h4>
+							<p>{{ Femmes.description_femme }}</p>
+							<h5>${{ Femmes.price_femme }}</h5>
+							{% if user.is_authenticated %}
+							<a class="btn btn-outline-primary " href="{% url 'reservation' %}">
+								Voir Detail
+							</a>
+						{% else %}
+						<a class="btn btn-outline-primary " href="{% url 'signin' %}">
+							connecter vous
+						</a>
+
+						{% endif %}
+
+					</div>
+						<span class="btn btn-outline-primary ms-1">{{Femmes.quantity}} articles disponible</span>
+				</div>
+					
+					
+			</div>
+				{% endfor %}
+				
+
+				{% for Hommes in hommes  %}
+			<div class="col-lg-4 col-md-6 special-grid dinner">
+				
+				<div class="gallery-single fix">
+					<img src="{{ Hommes.image_homme.url }}" class="img-fluid" alt="Image" >
+					<div class="why-text">
+						<h4>{{ Hommes.name_homme }}</h4>
+						<p>{{ Hommes.description_homme }}</p>
+						<h5>${{ Hommes.price_homme }}</h5>
+						{% if user.is_authenticated %}
+						<a class="btn btn-outline-primary " href="{% url 'reservation' %}">
+							Voir Detail
+						</a>
+						{% else %}
+						<a class="btn btn-outline-primary " href="{% url 'signup' %}">
+							Connecter vous
+						</a>
+
+						{% endif %}
+
+						
+					 </div>
+					<span class="btn btn-outline-primary ms-1">{{Hommes.quantity}} articles disponible</span>
+				</div>
+				
+			</div>
+			{% endfor %}
+
+			{% for Montres in enfant %}
+			<div class="col-lg-4 col-md-6 special-grid dinner">
+				
+				<div class="gallery-single fix">
+					<a class="lightbox" href="{% static 'images/3Fichier .png' %}">
+						<img src="{{ Montres.image.url }}" class="img-fluid" alt="Image" >
+					</a>
+					
+
+					<div class="why-text">
+						<h4>{{ Montres.name }}</h4>
+						<p>{{ Montres.description }}</p>
+						<h5>{{ Montres.price }}</h5>
+						{% if user.is_authenticated %}
+						<a class="btn btn-outline-primary " href="{% url 'reservation' %}">
+							Voir Detail
+						</a>
+						{% else %}
+						<a class="btn btn-outline-primary " href="{% url 'signup' %}">
+							Connecter vous
+						</a>
+
+						{% endif %}
+					</div> 
+					<span class="btn btn-outline-primary ms-1">{{Montres.quantity}} articles disponible</span>
+				</div>
+				
+			</div> 
+			{% endfor %}
+		</div>
+		
+	
+	</div>
+</div>
+
+	<!-- End Menu -->
+
+	<!-- Start Gallery -->
+	<div class="gallery-box">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Gallery</h2>
+						<p>NOS MEILLEURS VENTES
+
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="tz-gallery">
+				<div class="row">
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<a class="lightbox" href="{% static 'images/3Fichier .png' %}">
+							<img class="img-fluid" src="{% static 'images/3Fichier .png' %}" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="{% static 'images/2Fichier .png' %}">
+							<img class="img-fluid" src="{% static 'images/2Fichier .png' %}" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="{% static 'images/5Fichier .png' %}">
+							<img class="img-fluid" src="{% static 'images/5Fichier .png' %} " alt="Gallery Images">
+						</a>
+					</div>	
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Gallery -->
+
+	<!-- Start Customer Reviews -->
+	<div class="customer-reviews-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Mon Avis au public</h2>
+						<p>Les styles est le mot le plus  parler  dans ma boutique Akad online Shop</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 mr-auto ml-auto text-center">
+					<div id="reviews" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner mt-4">
+							<div class="carousel-item text-center active">
+								<div class="img-box p-1 border rounded-circle m-auto">
+									<img class="d-block w-100 rounded-circle" src="{% static 'images/profil.png' %}" alt="">
+								</div>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Amissa ABBAS D</strong></h5>
+								<h6 class="text-dark m-0">CEO of Akad online shop</h6>
+								<p class="m-0 pt-3"></p>
+							</div>
+							
+						</div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Customer Reviews -->
+
+	<!-- Start Contact info -->
+	<div class="contact-imfo-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<i class="fa fa-volume-control-phone"></i>
+					<div class="overflow-hidden">
+						<h4>Phone</h4>
+						<a href="tel:+243979390454">
+						<p class="lead">
+							+243 979 390 454
+						</p>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<i class="fa fa-envelope"></i>
+					<div class="overflow-hidden">
+						<h4>Email</h4>
+						<p><a href="mailto:Akadshop2022@gmail.com"> Akadshop2022@gmail.com</a></p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<i class="fa fa-map-marker"></i>
+					<div class="overflow-hidden">
+						<h4>Location</h4>
+						<p class="lead">
+							Kinshasa/Drc
+							Goma/Drc
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Contact info -->
+
+	<!-- Start Footer -->
+	<footer class="footer-area bg-f">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<h3>Apropos de nous</h3>
+					<p>
+						Akad online shop est une boutique de vetement tendance de tres bonne qualité.Ma boutique vous rend plus stylé, et vous propose un conseille en matière de la mode 
+					</p>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h3>Heures d'ouverture</h3>
+					<p><span class="text-color">Monday: </span>24h/24</p>
+					<p><span class="text-color">Tue-Wed :</span> 24h/24</p>
+					<p><span class="text-color">Thu-Fri :</span> 24h/24</p>
+					<p><span class="text-color">Sat-Sun :</span> 24h/24</p>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h3>Contact information </h3>
+					<p class="lead">Kinshasa/Drc
+									Goma/Drc
+					</p>
+					<p class="lead"><a href="tel:+243979390454">+243 979 390 454</a></p>
+					<p><a href="mailto:Akadshop2022@gmail.com"> Akadshop2022@gmail.com</a></p>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h3>Subscribe</h3>
+					<div class="subscribe_form">
+						<form class="subscribe_form">
+							<input name="EMAIL" id="subs-email" class="form_input" placeholder="Email Address..." type="email">
+							<button type="submit" class="submit">
+								<a href="mailto:Akadshop2022@gmail.com"> SUBSCRIBE
+							</a>
+								</button>
+							<div class="clearfix"></div>
+						</form>
+					</div>
+					<ul class="list-inline f-social">
+						<li class="list-inline-item"><a href="https://www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+
+						<li class="list-inline-item"><a href="https://twitter.com/@akadonlineshop/home/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+
+						<li class="list-inline-item"><a href="https://instagram.com/@akadonlineshop/home/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p class="company-name">All Rights Reserved. &copy; 2019 <a href="#"></a> Design By :
+					<a href="https://twitter.com/@PatauliBrandon/home/">6randon</a></p>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+	</footer>
+	<!-- End Footer -->
+
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+	<!-- ALL JS FILES -->
+	<script src="{% static 'online/js/jquery-3.2.1.min.js'%}"></script>
+	<script src="{% static 'online/js/popper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <!-- ALL PLUGINS -->
+	<script src="{% static 'online/js/jquery.superslides.min.js'%}"></script>
+	<script src="{% static 'online/js/images-loded.min.js'%}"></script>
+	<script src="{% static 'online/js/isotope.min.js'%}"></script>
+	<script src="{% static 'online/js/baguetteBox.min.js'%}"></script>
+	<script src="{% static 'online/js/form-validator.min.js'%}"></script>
+    <script src="{% static 'online/js/contact-form-script.js'%}"></script>
+    <script src="{% static 'online/js/custom.js'%} "></script>
+	
+	
+	
+</body>
+</html>
