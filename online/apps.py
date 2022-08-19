@@ -6,4 +6,3 @@ class OnlineConfig(AppConfig):
     name = 'online'
     
     
-    
