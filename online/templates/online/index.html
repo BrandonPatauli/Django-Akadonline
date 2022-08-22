@@ -186,7 +186,10 @@
 				<div class="col-lg-4 col-md-6 special-grid drinks">
 					
 					<div class="gallery-single fix">
-						<img src="{{ Femmes.image_femme.url }}" class="img-fluid" alt="Image">
+						<a class="lightbox" href="{% static 'Femmes.image_femme.url' %}">
+							<img src="{{ Femmes.image_femme.url }}" class="img-fluid" alt="Image" >
+						</a>
+						
 					<div class="why-text">
 							<h4>{{ Femmes.name_femme }}</h4>
 							<p>{{ Femmes.description_femme }}</p>
@@ -215,7 +218,10 @@
 			<div class="col-lg-4 col-md-6 special-grid dinner">
 				
 				<div class="gallery-single fix">
-					<img src="{{ Hommes.image_homme.url }}" class="img-fluid" alt="Image" >
+					
+					<a class="lightbox" href="{% static 'Hommes.image_homme.url' %}">
+						<img src="{{ Hommes.image_homme.url }}" class="img-fluid" alt="Image" >
+					</a>
 					<div class="why-text">
 						<h4>{{ Hommes.name_homme }}</h4>
 						<p>{{ Hommes.description_homme }}</p>
@@ -239,11 +245,11 @@
 			</div>
 			{% endfor %}
 
-			{% for Montres in enfant %}
+			{% for Montres in enfants %}
 			<div class="col-lg-4 col-md-6 special-grid dinner">
 				
 				<div class="gallery-single fix">
-					<a class="lightbox" href="{% static 'images/3Fichier .png' %}">
+					<a class="lightbox" href="{% static 'Montres.image.url' %}">
 						<img src="{{ Montres.image.url }}" class="img-fluid" alt="Image" >
 					</a>
 					
@@ -277,7 +283,7 @@
 	<!-- End Menu -->
 
 	<!-- Start Gallery -->
-	<div class="gallery-box">
+	{% comment %} <div class="gallery-box">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-12">
@@ -291,26 +297,17 @@
 			</div>
 			<div class="tz-gallery">
 				<div class="row">
+					{% for ventes in produits_achetes  %}
 					<div class="col-sm-12 col-md-4 col-lg-4">
 						<a class="lightbox" href="{% static 'images/3Fichier .png' %}">
 							<img class="img-fluid" src="{% static 'images/3Fichier .png' %}" alt="Gallery Images">
 						</a>
 					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="{% static 'images/2Fichier .png' %}">
-							<img class="img-fluid" src="{% static 'images/2Fichier .png' %}" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="{% static 'images/5Fichier .png' %}">
-							<img class="img-fluid" src="{% static 'images/5Fichier .png' %} " alt="Gallery Images">
-						</a>
-					</div>	
-					
+					{% endfor %}
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> {% endcomment %}
 	<!-- End Gallery -->
 
 	<!-- Start Customer Reviews -->

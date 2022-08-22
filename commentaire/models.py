@@ -1,13 +1,13 @@
 from django.db import models
 
 from Shop.settings import AUTH_USER_MODEL
-from online.models import Product
+from online.models import Product_femmes
 
 # Create your models here.
 
 
 class commentaire(models.Model):
-    Produit = models.ForeignKey(Product, null=True, on_delete=models.CASCADE, related_name='Comments')
+    Produit = models.ForeignKey(Product_femmes, null=True, on_delete=models.CASCADE, related_name='Comments')
     nom_comment = models.CharField(max_length=125, blank=True)
     #reponse = models.ForeignKey(commentaire, null=True, blank=True, on_delete=models.CASCADE, related_name='reply')
     auteur = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE,)

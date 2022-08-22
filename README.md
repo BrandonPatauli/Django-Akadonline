@@ -1,1 +1,1 @@
-# Akadonlineshop
+# Django-Akadonline
