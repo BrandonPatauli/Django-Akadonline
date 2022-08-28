@@ -12,14 +12,14 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os.path
 from pathlib import Path
-# from os import environ 
+from os import environ 
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# envs = environ.Env()
-# environ.Env.read_env(env_file=str(BASE_DIR / "Shop" / ".envs"))
+env = environ.Env()
+environ.Env.read_env(env_file=str(BASE_DIR / "Shop" / ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-p#41p)xqs1b5gtr+4^#u&a57!832!rm6qcn&1_hteah)!9pcm$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['akadonline.pythonanywhere.com']
 
 
 # Application definition
